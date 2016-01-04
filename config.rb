@@ -23,6 +23,9 @@ configure :development do
   activate :livereload
 end
 
+activate :relative_assets
+set :relative_links, true
+
 ###
 # Helpers
 ###
