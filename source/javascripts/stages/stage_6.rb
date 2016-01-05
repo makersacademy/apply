@@ -1,17 +1,18 @@
-class Stage6
-  def display_code
-    <<-CODE
+module Stages
+  class Stage6
+    def display_code
+      <<-CODE
 puts "Hello \#{upper(name)}"
 puts "Hello \#{lower(name)}"
 puts "Hello \#{random_name}"
 puts "Hello \#{random_case(name)}"
 puts "Hello \#{random_both}"
-    CODE
-  end
+      CODE
+    end
 
-  def code
-    <<-TEST
-#{Stage5.new.code}
+    def code
+      <<-TEST
+      #{Stage5.new.code}
 puts "Hello \#{random_both}"
 
 result = 1.upto(100).inject([]) do |memo, number|
@@ -23,19 +24,20 @@ if (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.cou
 else
   puts "please ensure your `random_both` returns either upper case or lower case, and each of the two names randomly."
 end
-    TEST
-  end
+      TEST
+    end
 
-  def instructions
-    <<-INSTR
+    def instructions
+      <<-INSTR
 Well done!</br></br>
 Now please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.
-    INSTR
-  end
+      INSTR
+    end
 
-  def next_stage
-    ycbm = Element.find('#youcanbookme')
-    ycbm.css('display', 'block')
-    nil
+    def next_stage
+      ycbm = Element.find('#youcanbookme')
+      ycbm.css('display', 'block')
+      nil
+    end
   end
 end

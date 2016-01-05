@@ -1,28 +1,30 @@
-class Stage1
-  def display_code
-    <<-CODE
+module Stages
+  class Stage1
+    def display_code
+      <<-CODE
 puts "Hello \#{name}"
-    CODE
-  end
+      CODE
+    end
 
-  def code
-    <<-TEST
+    def code
+      <<-TEST
 puts "Hello \#{name}"
 if name =~ /[a-zA-Z]+/
   true
 else
   puts "please ensure you assign your name to the variable `name`"
 end
-    TEST
-  end
+      TEST
+    end
 
-  def instructions
-    <<-INSTR
+    def instructions
+      <<-INSTR
 Please make this code run correctly by assigning a string value (use your own name) to the variable `name`
-    INSTR
-  end
+      INSTR
+    end
 
-  def next_stage
-    Stage2.new
+    def next_stage
+      Stage2.new
+    end
   end
 end

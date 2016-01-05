@@ -2,15 +2,15 @@ require 'opal'
 require 'opal-parser'
 require 'opal-jquery'
 
-require_relative 'default_try_code'
-require_relative 'stage_1'
-require_relative 'stage_2'
-require_relative 'stage_3'
-require_relative 'stage_4'
-require_relative 'stage_5'
-require_relative 'stage_6'
+require_relative 'default_apply_code'
+require_relative 'stages/stage_1'
+require_relative 'stages/stage_2'
+require_relative 'stages/stage_3'
+require_relative 'stages/stage_4'
+require_relative 'stages/stage_5'
+require_relative 'stages/stage_6'
 
-class TryOpal
+class Apply
   class Editor
     def initialize(dom_id, options)
       @native = `CodeMirror(document.getElementById(dom_id), #{options.to_n})`
@@ -46,9 +46,9 @@ class TryOpal
 
     Element.find('#run_code').on(:click) { run_code }
 
-    @editor.value = DEFAULT_TRY_CODE.strip
+    @editor.value = DEFAULT_APPLY_CODE.strip
 
-    begin_stage Stage1.new
+    begin_stage Stages::Stage1.new
   end
 
   def begin_stage(stage)
@@ -94,7 +94,7 @@ end
 
 Document.ready? do
   $stdout.write_proc = $stderr.write_proc = proc do |str|
-    TryOpal.instance.print_to_output(str)
+    Apply.instance.print_to_output(str)
   end
-  TryOpal.instance
+  Apply.instance
 end

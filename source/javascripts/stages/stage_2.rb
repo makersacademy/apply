@@ -1,29 +1,31 @@
-class Stage2
-  def display_code
-    <<-CODE
+module Stages
+  class Stage2
+    def display_code
+      <<-CODE
 puts "Hello \#{upper(name)}"
-    CODE
-  end
+      CODE
+    end
 
-  def code
-    <<-TEST
+    def code
+      <<-TEST
 puts "Hello \#{upper(name)}"
 if upper('asdf') == 'ASDF'
   true
 else
   puts "please ensure your `upper` method converts a string to all upper case."
 end
-    TEST
-  end
+      TEST
+    end
 
-  def instructions
-    <<-INSTR
+    def instructions
+      <<-INSTR
 Well done!</br></br>
 Now please implement a method called upper that will return a given string in all capitals
-    INSTR
-  end
+      INSTR
+    end
 
-  def next_stage
-    Stage3.new
+    def next_stage
+      Stage3.new
+    end
   end
 end
