@@ -3,8 +3,8 @@
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice;
 
-  return Opal.cdecl($scope, 'DEFAULT_TRY_CODE', "# your code here\n\n\n")
+  return Opal.cdecl($scope, 'DEFAULT_APPLY_CODE', "# your code here\n")
 })(Opal);
 
-//# sourceMappingURL=default_try_code.map
+//# sourceMappingURL=default_apply_code.map
 ;
