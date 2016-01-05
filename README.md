@@ -1,1 +1,1 @@
-# interview-staging
+# Apply to Makers Academy code challenge
