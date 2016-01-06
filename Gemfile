@@ -22,4 +22,7 @@ gem 'middleman-gh-pages'
 group :test do
   gem 'rspec'
   gem 'capybara'
+  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
+  gem 'launchy'
 end

@@ -33,6 +33,7 @@ class Apply
     @instance ||= self.new
   end
 
+  attr_reader :editor, :viewer
   def initialize
     @flush = []
 
