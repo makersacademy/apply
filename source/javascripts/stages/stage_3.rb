@@ -22,7 +22,7 @@ end
 
     def instructions
       <<-INSTR
-Well done!</br></br>
+Excellent!</br></br>
 Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the `upper` method.
       INSTR
     end

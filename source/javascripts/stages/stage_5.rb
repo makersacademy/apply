@@ -28,7 +28,7 @@ end
 
     def instructions
       <<-INSTR
-Well done!</br></br>
+Keep going!</br></br>
 Now please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.
       INSTR
     end

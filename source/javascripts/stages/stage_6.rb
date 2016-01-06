@@ -29,7 +29,7 @@ end
 
     def instructions
       <<-INSTR
-Well done!</br></br>
+Great, you are almost finished!</br></br>
 Now please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.
       INSTR
     end

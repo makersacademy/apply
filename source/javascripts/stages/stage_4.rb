@@ -27,7 +27,7 @@ end
 
     def instructions
       <<-INSTR
-Well done!</br></br>
+That's great!</br></br>
 Now please implement a method called `random_name` that will output either the string "Nikesh" or the value of `name` at random.  Do not delete the previous methods.
       INSTR
     end
