@@ -35,8 +35,8 @@ Now please implement a method called `random_both` that will return a lower or u
     end
 
     def next_stage
-      ycbm = Element.find('#youcanbookme')
-      ycbm.css('display', 'block')
+      ycbm = Element.find('#instructions')
+      ycbm.html('Please click to <a href="#">book your interview</a>')
       nil
     end
   end
