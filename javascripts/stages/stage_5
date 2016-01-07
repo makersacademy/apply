@@ -3,7 +3,7 @@
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -15,22 +15,28 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 5;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\nputs \"Hello \#{random_name}\"\nputs \"Hello \#{random_case(name)}\"\n";
+        return "" + ($scope.get('Stage4').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_case(name)}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage4').$new().$code()) + "\nputs \"Hello \#{random_case(name)}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_case('John')\nend\n\nif result.count('JOHN') > 0 and result.count('john') > 0\n  true\nelse\n  puts \"please ensure your `random_case` method returns either upper case or lower case randomly.\"\nend\n";
+        return "" + ($scope.get('Stage4').$new().$code()) + "\nputs \"Hello \#{random_case(name)}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_case('John')\nend\n\nif result.count('JOHN') > 0 and result.count('john') > 0\n  true\nelse\n  puts \"please ensure your `random_case` method returns either upper case or lower case randomly.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Keep going!</br></br>\nNow please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.\n";
+        return "<p>Keep going!</p>\n<p>Now please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {

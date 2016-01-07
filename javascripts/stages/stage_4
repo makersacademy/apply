@@ -3,7 +3,7 @@
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -15,22 +15,28 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 4;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\nputs \"Hello \#{random_name}\"\n";
+        return "" + ($scope.get('Stage3').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_name}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage3').$new().$code()) + "\nputs \"Hello \#{random_name}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_name\nend\n\nif result.count('Nikesh') > 0 and result.count(name) > 0\n  true\nelse\n  puts 'please ensure your `random_name` returns your name or \"Nikesh\" randomly.'\nend\n";
+        return "" + ($scope.get('Stage3').$new().$code()) + "\nputs \"Hello \#{random_name}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_name\nend\n\nif result.count('Nikesh') > 0 and result.count(name) > 0\n  true\nelse\n  puts \"please ensure your `random_name` method returns either '\#{name}' or 'Nikesh' randomly.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "That's great!</br></br>\nNow please implement a method called `random_name` that will output either the string \"Nikesh\" or the value of `name` at random.  Do not delete the previous methods.\n";
+        return "<p>That's great!</p>\n<p>Now please implement a method called `random_name` that will output either the string \"Nikesh\" or your name.  Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {

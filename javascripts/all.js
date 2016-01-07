@@ -32686,6 +32686,12 @@ Opal.modules["stages/stage_1"] = function(Opal) {
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 1;
+      };
+
       def.$display_code = function() {
         var self = this;
 
@@ -32701,7 +32707,7 @@ Opal.modules["stages/stage_1"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "Please make this code run correctly by assigning a string value (use your own name) to the variable `name`\n";
+        return "<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -32718,7 +32724,7 @@ Opal.modules["stages/stage_2"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -32730,22 +32736,28 @@ Opal.modules["stages/stage_2"] = function(Opal) {
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 2;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\n";
+        return "" + ($scope.get('Stage1').$new().$display_code().$strip()) + "\nputs \"Hello \#{upper(name)}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nif upper('asdf') == 'ASDF'\n  true\nelse\n  puts \"please ensure your `upper` method converts a string to all upper case.\"\nend\n";
+        return "" + ($scope.get('Stage1').$new().$code()) + "\nputs \"Hello \#{upper(name)}\"\nif upper('asdf') == 'ASDF'\n  true\nelse\n  puts \"please ensure your `upper` method converts a string to all upper case.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called upper that will return a given string in all capitals\n";
+        return "<p>Well done!</p>\n<p>Now please make the code above work by implementing a method called `upper` that will return a given string converted to all capitals</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -32762,7 +32774,7 @@ Opal.modules["stages/stage_3"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -32774,22 +32786,28 @@ Opal.modules["stages/stage_3"] = function(Opal) {
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 3;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\n";
+        return "" + ($scope.get('Stage2').$new().$display_code().$strip()) + "\nputs \"Hello \#{lower(name)}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage2').$new().$code()) + "\nputs \"Hello \#{lower(name)}\"\n\nif lower('ASDF') == 'asdf'\n  true\nelse\n  puts \"please ensure your `lower` method converts a string to all lower case.\"\nend\n";
+        return "" + ($scope.get('Stage2').$new().$code()) + "\nputs \"Hello \#{lower(name)}\"\n\nif lower('ASDF') == 'asdf'\n  true\nelse\n  puts \"please ensure your `lower` method converts a string to all lower case.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Excellent!</br></br>\nNow please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the `upper` method.\n";
+        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -32806,7 +32824,7 @@ Opal.modules["stages/stage_4"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -32818,22 +32836,28 @@ Opal.modules["stages/stage_4"] = function(Opal) {
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 4;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\nputs \"Hello \#{random_name}\"\n";
+        return "" + ($scope.get('Stage3').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_name}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage3').$new().$code()) + "\nputs \"Hello \#{random_name}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_name\nend\n\nif result.count('Nikesh') > 0 and result.count(name) > 0\n  true\nelse\n  puts 'please ensure your `random_name` returns your name or \"Nikesh\" randomly.'\nend\n";
+        return "" + ($scope.get('Stage3').$new().$code()) + "\nputs \"Hello \#{random_name}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_name\nend\n\nif result.count('Nikesh') > 0 and result.count(name) > 0\n  true\nelse\n  puts \"please ensure your `random_name` method returns either '\#{name}' or 'Nikesh' randomly.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "That's great!</br></br>\nNow please implement a method called `random_name` that will output either the string \"Nikesh\" or the value of `name` at random.  Do not delete the previous methods.\n";
+        return "<p>That's great!</p>\n<p>Now please implement a method called `random_name` that will output either the string \"Nikesh\" or your name.  Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -32850,7 +32874,7 @@ Opal.modules["stages/stage_5"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -32862,22 +32886,28 @@ Opal.modules["stages/stage_5"] = function(Opal) {
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 5;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\nputs \"Hello \#{random_name}\"\nputs \"Hello \#{random_case(name)}\"\n";
+        return "" + ($scope.get('Stage4').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_case(name)}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage4').$new().$code()) + "\nputs \"Hello \#{random_case(name)}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_case('John')\nend\n\nif result.count('JOHN') > 0 and result.count('john') > 0\n  true\nelse\n  puts \"please ensure your `random_case` method returns either upper case or lower case randomly.\"\nend\n";
+        return "" + ($scope.get('Stage4').$new().$code()) + "\nputs \"Hello \#{random_case(name)}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_case('John')\nend\n\nif result.count('JOHN') > 0 and result.count('john') > 0\n  true\nelse\n  puts \"please ensure your `random_case` method returns either upper case or lower case randomly.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Keep going!</br></br>\nNow please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.\n";
+        return "<p>Keep going!</p>\n<p>Now please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -32894,7 +32924,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new', '$find', '$html']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code', '$find', '$html', '$hide']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -32906,22 +32936,28 @@ Opal.modules["stages/stage_6"] = function(Opal) {
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 6;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\nputs \"Hello \#{random_name}\"\nputs \"Hello \#{random_case(name)}\"\nputs \"Hello \#{random_both}\"\n";
+        return "" + ($scope.get('Stage5').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_both}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage5').$new().$code()) + "\nputs \"Hello \#{random_both}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_both\nend\n\nif (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.count(name.upcase) > 0) and (result.count(name.downcase) > 0)\n  true\nelse\n  puts \"please ensure your `random_both` returns either upper case or lower case, and each of the two names randomly.\"\nend\n";
+        return "" + ($scope.get('Stage5').$new().$code()) + "\nputs \"Hello \#{random_both}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_both\nend\n\nif (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.count(name.upcase) > 0) and (result.count(name.downcase) > 0)\n  true\nelse\n  puts \"please ensure your `random_both` method returns either upper case or lower case of either of the two names randomly.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Great, you are almost finished!</br></br>\nNow please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.\n";
+        return "<p>Great, you are almost finished!</p>\n<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names at random.  Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -32929,6 +32965,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
 
         ycbm = $scope.get('Element').$find("#instructions");
         ycbm.$html("Please click to <a href=\"#\">book your interview</a>");
+        $scope.get('Element').$find("#run_code").$hide();
         return nil;
       }, nil) && 'next_stage';
     })(self, null)
@@ -32940,7 +32977,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var $a, $b, TMP_3, self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $klass = Opal.klass, $hash2 = Opal.hash2, $gvars = Opal.gvars;
 
-  Opal.add_stubs(['$require', '$to_n', '$new', '$setHeight', '$lambda', '$run_code', '$on', '$find', '$value=', '$strip', '$begin_stage', '$display_code', '$html', '$instructions', '$+', '$value', '$code', '$stage', '$compile', '$eval_code', '$next_stage', '$log_error', '$puts', '$<<', '$join', '$ready?', '$write_proc=', '$proc', '$print_to_output', '$instance']);
+  Opal.add_stubs(['$require', '$to_n', '$new', '$setHeight', '$lambda', '$run_code', '$on', '$find', '$hide', '$value=', '$strip', '$begin_stage', '$display_code', '$html', '$stage_number', '$instructions', '$+', '$value', '$code', '$stage', '$compile', '$show', '$eval_code', '$next_stage', '$log_error', '$puts', '$<<', '$join', '$ready?', '$write_proc=', '$proc', '$print_to_output', '$instance']);
   self.$require("opal");
   self.$require("opal-parser");
   self.$require("opal-jquery");
@@ -33001,7 +33038,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
       var $a, $b, TMP_1, $c, TMP_2, $d, self = this;
 
       self.flush = [];
-      self.output = $scope.get('Editor').$new("output", $hash2(["lineNumbers", "mode", "readOnly"], {"lineNumbers": false, "mode": "text", "readOnly": true}));
+      self.output = $scope.get('Editor').$new("output", $hash2(["lineNumbers", "mode", "readOnly", "theme"], {"lineNumbers": false, "mode": "text", "readOnly": true, "theme": "tomorrow-night-eighties"}));
       self.viewer = $scope.get('Editor').$new("viewer", $hash2(["lineNumbers", "mode", "readOnly", "theme"], {"lineNumbers": false, "mode": "ruby", "readOnly": true, "theme": "tomorrow-night-eighties"}));
       self.viewer.$setHeight(100);
       self.editor = $scope.get('Editor').$new("editor", $hash2(["lineNumbers", "mode", "tabMode", "theme", "extraKeys"], {"lineNumbers": true, "mode": "ruby", "tabMode": "shift", "theme": "tomorrow-night-eighties", "extraKeys": $hash2(["Cmd-Enter"], {"Cmd-Enter": ($a = ($b = self).$lambda, $a.$$p = (TMP_1 = function(){var self = TMP_1.$$s || this;
@@ -33010,6 +33047,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
       ($a = ($c = $scope.get('Element').$find("#run_code")).$on, $a.$$p = (TMP_2 = function(){var self = TMP_2.$$s || this;
 
       return self.$run_code()}, TMP_2.$$s = self, TMP_2), $a).call($c, "click");
+      $scope.get('Element').$find("#output-wrapper").$hide();
       (($a = [$scope.get('DEFAULT_APPLY_CODE').$strip()]), $d = self.editor, $d['$value='].apply($d, $a), $a[$a.length-1]);
       return self.$begin_stage((($scope.get('Stages')).$$scope.get('Stage1')).$new());
     };
@@ -33019,6 +33057,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
 
       if (stage !== false && stage !== nil) {
         (($a = [stage.$display_code()]), $b = self.viewer, $b['$value='].apply($b, $a), $a[$a.length-1]);
+        $scope.get('Element').$find("#stage-number").$html(stage.$stage_number());
         $scope.get('Element').$find("#instructions").$html(stage.$instructions());
         return self.stage = stage;
         } else {
@@ -33034,6 +33073,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
       try {
       ruby_code = self.editor.$value()['$+']("\n")['$+'](self.$stage().$code());
         code = $scope.get('Opal').$compile(ruby_code, $hash2(["source_map_enabled"], {"source_map_enabled": false}));
+        $scope.get('Element').$find("#output-wrapper").$show();
         if ((($a = self.$eval_code(code)) !== nil && (!$a.$$is_boolean || $a == true))) {
           return self.$begin_stage(self.$stage().$next_stage())
           } else {

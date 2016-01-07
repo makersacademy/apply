@@ -21,7 +21,7 @@
           <div class='centered-row'>
             <h1>Apply to Makers Academy</h1>
             <p>
-              Can’t wait to get started? Take our online test below.
+              Can’t wait to get started? Take our online Ruby test below.
               <br>
               Don't know Ruby? Check out
               <a href='https://www.codecademy.com/learn/ruby'>Codecademy Ruby Track</a>
@@ -31,30 +31,30 @@
       </section>
       <section>
         <div class='container'>
+          <div class='header-container'>
+            <h3>Your journey starts here!</h3>
+          </div>
           <div class='two-width-row'>
-            <div class='column'>
-              <div class='header-container'>
-                <h3>Instructions</h3>
+            <div class='column align-left'>
+              <h4>
+                Step
+                <span id='stage-number'></span>
+              </h4>
+              <div class='code-editor' id='viewer' style='padding:0; '></div>
+              <p class='align-left' id='instructions'></p>
+              <div class='button-row'>
+                <button class='button' id='run_code'>Run it now (output will be shown below)</button>
               </div>
-              <p id='instructions'>
-                Try to get the string 'john' in the output
-              </p>
             </div>
-            <div class='column'>
-              <div class='col-md-6' id='editor_wrapper'>
-                <button class='button' id='run_code'>Run (Cmd+Enter)</button>
-                <p>
-                  <div class='well' id='editor' style='padding:0'></div>
-                  <br>
-                  <h4>Test Code</h4>
-                  <div class='well' id='viewer' style='padding:0; '></div>
-                  <br>
-                  <h4>Result</h4>
-                  <p>
-                    <div class='well' id='output' style='padding:0'></div>
-                  </p>
-                </p>
-              </div>
+            <div class='column align-left'>
+              <h4>Enter your Ruby code below:</h4>
+              <div class='code-editor' id='editor' style='padding:0'></div>
+            </div>
+          </div>
+          <div class='one-width-row'>
+            <div class='column align-left' id='output-wrapper'>
+              <h4>Result:</h4>
+              <div class='code-editor' id='output' style='padding:0'></div>
             </div>
           </div>
         </div>

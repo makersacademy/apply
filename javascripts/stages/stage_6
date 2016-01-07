@@ -3,7 +3,7 @@
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new', '$find', '$html']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code', '$find', '$html', '$hide']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -15,22 +15,28 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 6;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\nputs \"Hello \#{random_name}\"\nputs \"Hello \#{random_case(name)}\"\nputs \"Hello \#{random_both}\"\n";
+        return "" + ($scope.get('Stage5').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_both}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage5').$new().$code()) + "\nputs \"Hello \#{random_both}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_both\nend\n\nif (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.count(name.upcase) > 0) and (result.count(name.downcase) > 0)\n  true\nelse\n  puts \"please ensure your `random_both` returns either upper case or lower case, and each of the two names randomly.\"\nend\n";
+        return "" + ($scope.get('Stage5').$new().$code()) + "\nputs \"Hello \#{random_both}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_both\nend\n\nif (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.count(name.upcase) > 0) and (result.count(name.downcase) > 0)\n  true\nelse\n  puts \"please ensure your `random_both` method returns either upper case or lower case of either of the two names randomly.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Great, you are almost finished!</br></br>\nNow please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.\n";
+        return "<p>Great, you are almost finished!</p>\n<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names at random.  Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -38,6 +44,7 @@
 
         ycbm = $scope.get('Element').$find("#instructions");
         ycbm.$html("Please click to <a href=\"#\">book your interview</a>");
+        $scope.get('Element').$find("#run_code").$hide();
         return nil;
       }, nil) && 'next_stage';
     })(self, null)

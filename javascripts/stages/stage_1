@@ -15,6 +15,12 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 1;
+      };
+
       def.$display_code = function() {
         var self = this;
 
@@ -30,7 +36,7 @@
       def.$instructions = function() {
         var self = this;
 
-        return "Please make this code run correctly by assigning a string value (use your own name) to the variable `name`\n";
+        return "<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right.</p>\n";
       };
 
       return (def.$next_stage = function() {

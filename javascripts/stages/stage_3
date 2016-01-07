@@ -3,7 +3,7 @@
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new']);
+  Opal.add_stubs(['$strip', '$display_code', '$new', '$code']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -15,22 +15,28 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
+      def.$stage_number = function() {
+        var self = this;
+
+        return 3;
+      };
+
       def.$display_code = function() {
         var self = this;
 
-        return "puts \"Hello \#{upper(name)}\"\nputs \"Hello \#{lower(name)}\"\n";
+        return "" + ($scope.get('Stage2').$new().$display_code().$strip()) + "\nputs \"Hello \#{lower(name)}\"\n";
       };
 
       def.$code = function() {
         var self = this;
 
-        return "      " + ($scope.get('Stage2').$new().$code()) + "\nputs \"Hello \#{lower(name)}\"\n\nif lower('ASDF') == 'asdf'\n  true\nelse\n  puts \"please ensure your `lower` method converts a string to all lower case.\"\nend\n";
+        return "" + ($scope.get('Stage2').$new().$code()) + "\nputs \"Hello \#{lower(name)}\"\n\nif lower('ASDF') == 'asdf'\n  true\nelse\n  puts \"please ensure your `lower` method converts a string to all lower case.\"\nend\n";
       };
 
       def.$instructions = function() {
         var self = this;
 
-        return "Excellent!</br></br>\nNow please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the `upper` method.\n";
+        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method.</p>\n";
       };
 
       return (def.$next_stage = function() {
