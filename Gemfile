@@ -10,11 +10,12 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 
 gem "opal"
 gem "opal-jquery"
+gem 'opal-rspec', '~> 0.5.0'
 
 gem 'bootstrap-sass', '~> 3.2.0.2'
 
 # Middleman Gems
-gem "middleman", "~>3.3.12"
+gem "middleman", "~> 3.3.12"
 # Live-reloading plugin
 gem "middleman-livereload", "~> 3.1.0"
 gem 'middleman-gh-pages'
