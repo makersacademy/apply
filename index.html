@@ -1,58 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
   <head>
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta charset="utf-8">
-    <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
-
+    <meta content='IE=edge' http-equiv='X-UA-Compatible'>
+    <meta charset='utf-8'>
+    <meta content='width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no' name='viewport'>
     <!-- Use title if it's in the page YAML frontmatter -->
     <title>Apply to Makers Academy</title>
-
     <link href='//fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-
     <link href="stylesheets/site.css" rel="stylesheet" type="text/css" />
     <script src="javascripts/all.js" type="text/javascript"></script>
   </head>
-
-  <body class="index">
-    <div class="container">
+  <body class='page_classes'>
+    <div class='container'>
       <link href="stylesheets/codemirror.css" rel="stylesheet" type="text/css" />
-<script>Opal.load('apply');</script>
-
-<div class="page-header"><h1>Apply to Makers Academy</h1></div>
-
-<div class="row" id="wrapper">
-  <div id="editor_wrapper" class="col-md-6">
-    <a href="#" id="run_code" class="btn btn-primary">Run (Cmd+Enter)</a>
-    <a href="#" id="link_code" class="btn">Link</a>
-    <p></p>
-    <div id="editor" class="well" style="padding:0"></div>
-    <div id="viewer" class="well" style="padding:0; "></div>
-  </div>
-  <div class="col-md-6">
-    <a href="#" class="btn disabled">Instructions</a>
-    <p id='instructions'>Try to get the string 'john' in the output</p>
-
-  </div>
-</div>
-
-<!-- output -->
-<div class="row" id="wrapper">
-  <div class="col-md-6">
-    <a href="#" class="btn disabled">Output</a>
-    <p></p>
-    <div id="output" class="well" style="padding:0">
-    </div>
-  </div>
-  <div class="col-md-6">
-    <a href="#" class="btn disabled">Application Instructions will appear here</a>
-    <p></p>
-    <div id="youcanbookme" class="well" style="padding:0; display:none;">
-      Please click to <a href='#'>book your interview</a>
-    </div>
-  </div>
-</div>
-
+      <script>
+        Opal.load('apply');
+      </script>
+      <section class='hero-splash' style='background-image: url(http://assets.makersacademy.com/images//backgrounds/B5.jpg);'>
+        <div class='container'>
+          <div class='centered-row'>
+            <h1>Apply to Makers Academy</h1>
+            <p>
+              Can’t wait to get started? Take our online test below.
+              <br>
+              Don't know Ruby? Check out
+              <a href='https://www.codecademy.com/learn/ruby'>Codecademy Ruby Track</a>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class='container'>
+          <div class='two-width-row'>
+            <div class='column'>
+              <div class='header-container'>
+                <h3>Instructions</h3>
+              </div>
+              <p id='instructions'>
+                Try to get the string 'john' in the output
+              </p>
+            </div>
+            <div class='column'>
+              <div class='col-md-6' id='editor_wrapper'>
+                <button class='button' id='run_code'>Run (Cmd+Enter)</button>
+                <p>
+                  <div class='well' id='editor' style='padding:0'></div>
+                  <br>
+                  <h4>Test Code</h4>
+                  <div class='well' id='viewer' style='padding:0; '></div>
+                  <br>
+                  <h4>Result</h4>
+                  <p>
+                    <div class='well' id='output' style='padding:0'></div>
+                  </p>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </div>
   </body>
 </html>

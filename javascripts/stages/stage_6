@@ -3,7 +3,7 @@
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new', '$find', '$css']);
+  Opal.add_stubs(['$code', '$new', '$find', '$html']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -30,14 +30,14 @@
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.\n";
+        return "Great, you are almost finished!</br></br>\nNow please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.\n";
       };
 
       return (def.$next_stage = function() {
         var self = this, ycbm = nil;
 
-        ycbm = $scope.get('Element').$find("#youcanbookme");
-        ycbm.$css("display", "block");
+        ycbm = $scope.get('Element').$find("#instructions");
+        ycbm.$html("Please click to <a href=\"#\">book your interview</a>");
         return nil;
       }, nil) && 'next_stage';
     })(self, null)

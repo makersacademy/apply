@@ -30,7 +30,7 @@
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.\n";
+        return "Keep going!</br></br>\nNow please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.\n";
       };
 
       return (def.$next_stage = function() {

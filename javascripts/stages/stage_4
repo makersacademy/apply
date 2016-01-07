@@ -30,7 +30,7 @@
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `random_name` that will output either the string \"Nikesh\" or the value of `name` at random.  Do not delete the previous methods.\n";
+        return "That's great!</br></br>\nNow please implement a method called `random_name` that will output either the string \"Nikesh\" or the value of `name` at random.  Do not delete the previous methods.\n";
       };
 
       return (def.$next_stage = function() {

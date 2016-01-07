@@ -26641,7 +26641,7 @@ Opal.modules["stages/stage_3"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the `upper` method.\n";
+        return "Excellent!</br></br>\nNow please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the `upper` method.\n";
       };
 
       return (def.$next_stage = function() {
@@ -26685,7 +26685,7 @@ Opal.modules["stages/stage_4"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `random_name` that will output either the string \"Nikesh\" or the value of `name` at random.  Do not delete the previous methods.\n";
+        return "That's great!</br></br>\nNow please implement a method called `random_name` that will output either the string \"Nikesh\" or the value of `name` at random.  Do not delete the previous methods.\n";
       };
 
       return (def.$next_stage = function() {
@@ -26729,7 +26729,7 @@ Opal.modules["stages/stage_5"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.\n";
+        return "Keep going!</br></br>\nNow please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.\n";
       };
 
       return (def.$next_stage = function() {
@@ -26746,7 +26746,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
   Opal.dynamic_require_severity = "error";
   var self = Opal.top, $scope = Opal, nil = Opal.nil, $breaker = Opal.breaker, $slice = Opal.slice, $module = Opal.module, $klass = Opal.klass;
 
-  Opal.add_stubs(['$code', '$new', '$find', '$css']);
+  Opal.add_stubs(['$code', '$new', '$find', '$html']);
   return (function($base) {
     var self = $module($base, 'Stages');
 
@@ -26773,14 +26773,14 @@ Opal.modules["stages/stage_6"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "Well done!</br></br>\nNow please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.\n";
+        return "Great, you are almost finished!</br></br>\nNow please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.\n";
       };
 
       return (def.$next_stage = function() {
         var self = this, ycbm = nil;
 
-        ycbm = $scope.get('Element').$find("#youcanbookme");
-        ycbm.$css("display", "block");
+        ycbm = $scope.get('Element').$find("#instructions");
+        ycbm.$html("Please click to <a href=\"#\">book your interview</a>");
         return nil;
       }, nil) && 'next_stage';
     })(self, null)
