@@ -1,0 +1,33 @@
+---
+title: "Apply to Makers Academy"
+---
+
+
+= stylesheet_link_tag "codemirror"
+
+:javascript
+  Opal.load('apply');
+
+.page-header
+  %h1 Apply to Makers Academy
+#wrapper.row
+  #editor_wrapper.col-md-6
+    %a#run_code.btn.btn-primary{:href => "#"} Run (Cmd+Enter)
+    %p
+    #editor.well{:style => "padding:0"}
+    #viewer.well{:style => "padding:0; "}
+  .col-md-6
+    %a.btn.disabled{:href => "#"} Instructions
+    %p#instructions Try to get the string 'john' in the output
+/ output
+#wrapper.row
+  .col-md-6
+    %a.btn.disabled{:href => "#"} Output
+    %p
+    #output.well{:style => "padding:0"}
+  .col-md-6
+    %a.btn.disabled{:href => "#"} Application Instructions will appear here
+    %p
+    #youcanbookme.well{:style => "padding:0; display:none;"}
+      Please click to
+      %a{:href => "#"} book your interview

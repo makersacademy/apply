@@ -11,8 +11,6 @@ gem 'tzinfo-data', platforms: [:mswin, :mingw, :jruby]
 gem "opal"
 gem "opal-jquery"
 
-gem 'bootstrap-sass', '~> 3.2.0.2'
-
 # Middleman Gems
 gem "middleman", "~>3.3.12"
 # Live-reloading plugin

@@ -40,6 +40,9 @@ after_configuration do
   end
 end
 
+sprockets.append_path File.join(root, 'bower_components')
+sprockets.import_asset 'makers_styles'
+
 ###
 # Helpers
 ###
