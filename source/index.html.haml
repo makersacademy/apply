@@ -13,25 +13,30 @@ title: "Apply to Makers Academy"
     .centered-row
       %h1 Apply to Makers Academy
       %p
-        Can’t wait to get started? Take our online test below.
+        Can’t wait to get started? Take our online Ruby test below.
         %br
         Don't know Ruby? Check out
         %a{:href=> "https://www.codecademy.com/learn/ruby"} Codecademy Ruby Track
 
 %section
   .container
+    .header-container
+      %h3 Your journey starts here!
     .two-width-row
-      .column
-        .header-container
-          %h3 Instructions
+      .column.align-left
+        %h4
+          Step
+          %span#stage-number
+        #viewer.code-editor{:style => "padding:0; "}
         %p#instructions.align-left
-          Try to get the string 'john' in the output
-      .column
+        .button-row
+          %button#run_code.button Run it now (output will be shown below)
+      .column.align-left
         %h4 Enter your Ruby code below:
         #editor.code-editor{:style => "padding:0"}
-        %h4 To make the following work:
-        #viewer.code-editor{:style => "padding:0; "}
-        %button#run_code.button Run it Now (output will be shown below)
+    .one-width-row
+      #output-wrapper.column.align-left
+        %h4 Result:
         #output.code-editor{:style => "padding:0"}
 
 

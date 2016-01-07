@@ -1,15 +1,19 @@
 module Stages
   class Stage3
+    def stage_number
+      3
+    end
+
     def display_code
       <<-CODE
-puts "Hello \#{upper(name)}"
+#{Stage2.new.display_code.strip}
 puts "Hello \#{lower(name)}"
       CODE
     end
 
     def code
       <<-TEST
-      #{Stage2.new.code}
+#{Stage2.new.code}
 puts "Hello \#{lower(name)}"
 
 if lower('ASDF') == 'asdf'
@@ -22,8 +26,8 @@ end
 
     def instructions
       <<-INSTR
-Excellent!</br></br>
-Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the `upper` method.
+<p>Excellent work!</p>
+<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method.</p>
       INSTR
     end
 

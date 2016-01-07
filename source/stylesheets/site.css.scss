@@ -11,3 +11,10 @@
 .code-editor {
   margin-bottom: 27px;
 }
+
+.one-width-row {
+  @include ma-columns(1);
+  .column {
+    padding: 0 modular-scale(1);
+  }
+}

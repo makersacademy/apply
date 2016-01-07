@@ -36,7 +36,7 @@ class Apply
   def initialize
     @flush = []
 
-    @output = Editor.new :output, lineNumbers: false, mode: 'text', readOnly: true
+    @output = Editor.new :output, lineNumbers: false, mode: 'text', readOnly: true, theme: 'tomorrow-night-eighties'
     @viewer = Editor.new :viewer, lineNumbers: false, mode: 'ruby', readOnly: true, theme: 'tomorrow-night-eighties'
     # Element.find('#viewer').css('height', '200px' )
     @viewer.setHeight(100);
@@ -46,6 +46,8 @@ class Apply
 
     Element.find('#run_code').on(:click) { run_code }
 
+    Element.find('#output-wrapper').hide
+
     @editor.value = DEFAULT_APPLY_CODE.strip
 
     begin_stage Stages::Stage1.new
@@ -54,6 +56,7 @@ class Apply
   def begin_stage(stage)
     if stage
       @viewer.value = stage.display_code
+      Element.find('#stage-number').html(stage.stage_number)
       Element.find('#instructions').html(stage.instructions)
       @stage = stage
     end
@@ -66,6 +69,7 @@ class Apply
     begin
       ruby_code = @editor.value + "\n" + stage.code
       code = Opal.compile(ruby_code, :source_map_enabled => false)
+      Element.find('#output-wrapper').show
       if eval_code code
         begin_stage stage.next_stage
       end
