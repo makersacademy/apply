@@ -18,6 +18,9 @@ page '/*.txt', layout: false
 
 # General configuration
 
+Dir["lib/*.rb"].each { |file| require file }
+helpers ImageHelper
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
