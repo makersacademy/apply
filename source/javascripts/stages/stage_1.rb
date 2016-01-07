@@ -19,7 +19,8 @@ end
 
     def instructions
       <<-INSTR
-Please make this code run correctly by assigning a string value (use your own name) to the variable `name`
+<h4>Step 1</h4>
+<p>Please make this code run correctly by assigning a string value (use your own name) to the variable `name`</p>
       INSTR
     end
 

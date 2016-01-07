@@ -1,4 +1,13 @@
 //= require _vendor/pygment_solarized_light
 //= require _vendor/codemirror-solarized
+//= require codemirror
 
 @import "makers_styles";
+
+.align-left {
+  text-align: left;
+}
+
+.code-editor {
+  margin-bottom: 27px;
+}
