@@ -8,26 +8,32 @@ title: "Apply to Makers Academy"
 :javascript
   Opal.load('apply');
 
-.page-header
-  %h1 Apply to Makers Academy
+%section.hero-splash{style: "background-image: url(#{image_path("/backgrounds/B5.jpg")});"}
+  .container
+    .centered-row
+      %h3.leader Become a
+      %h1 Junior Web Developer
+      %h3 100% ONLINE  |  100% FULL TIME  | 100% REAL JOBS
+      %p Can’t wait to get started? Sign up to our newsletter and get a free e-book: Learn Ruby in 15 minutes.
+
 #wrapper.row
   #editor_wrapper.col-md-6
     %a#run_code.btn.btn-primary{:href => "#"} Run (Cmd+Enter)
     %p
-    #editor.well{:style => "padding:0"}
-    #viewer.well{:style => "padding:0; "}
-  .col-md-6
-    %a.btn.disabled{:href => "#"} Instructions
+      #editor.well{:style => "padding:0"}
+        #viewer.well{:style => "padding:0; "}
+          .col-md-6
+            %a.btn.disabled{:href => "#"} Instructions
     %p#instructions Try to get the string 'john' in the output
 / output
 #wrapper.row
   .col-md-6
     %a.btn.disabled{:href => "#"} Output
     %p
-    #output.well{:style => "padding:0"}
-  .col-md-6
-    %a.btn.disabled{:href => "#"} Application Instructions will appear here
+      #output.well{:style => "padding:0"}
+        .col-md-6
+          %a.btn.disabled{:href => "#"} Application Instructions will appear here
     %p
-    #youcanbookme.well{:style => "padding:0; display:none;"}
-      Please click to
+      #youcanbookme.well{:style => "padding:0; display:none;"}
+        Please click to
       %a{:href => "#"} book your interview
