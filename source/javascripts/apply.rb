@@ -1,5 +1,4 @@
 require 'opal'
-require 'opal-parser'
 require 'opal-jquery'
 
 require_relative 'default_apply_code'
@@ -96,9 +95,4 @@ class Apply
   end
 end
 
-Document.ready? do
-  $stdout.write_proc = $stderr.write_proc = proc do |str|
-    Apply.instance.print_to_output(str)
-  end
-  Apply.instance
-end
+

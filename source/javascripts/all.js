@@ -3,3 +3,4 @@
 //= require _vendor/codemirror
 //= require _vendor/ruby
 //= require apply
+//= require ready
