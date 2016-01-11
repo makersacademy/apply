@@ -1,17 +1,19 @@
 module Stages
   class Stage5
+    def stage_number
+      5
+    end
+
     def display_code
       <<-CODE
-puts "Hello \#{upper(name)}"
-puts "Hello \#{lower(name)}"
-puts "Hello \#{random_name}"
+#{Stage4.new.display_code.strip}
 puts "Hello \#{random_case(name)}"
       CODE
     end
 
     def code
       <<-TEST
-      #{Stage4.new.code}
+#{Stage4.new.code}
 puts "Hello \#{random_case(name)}"
 
 result = 1.upto(100).inject([]) do |memo, number|
@@ -28,8 +30,8 @@ end
 
     def instructions
       <<-INSTR
-Well done!</br></br>
-Now please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.
+<p>Keep going!</p>
+<p>Now please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.</p>
       INSTR
     end
 

@@ -1,0 +1,21 @@
+{
+  "name": "apply",
+  "homepage": "https://github.com/makersacademy/apply",
+  "authors": [
+    "Ben Forrest <ben@silvabox.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "makers_styles": "~2.4.6"
+  }
+}

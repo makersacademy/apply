@@ -1,5 +1,9 @@
 module Stages
   class Stage1
+    def stage_number
+      1
+    end
+
     def display_code
       <<-CODE
 puts "Hello \#{name}"
@@ -19,7 +23,7 @@ end
 
     def instructions
       <<-INSTR
-Please make this code run correctly by assigning a string value (use your own name) to the variable `name`
+<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right.</p>
       INSTR
     end
 

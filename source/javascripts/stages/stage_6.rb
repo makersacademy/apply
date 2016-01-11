@@ -1,18 +1,19 @@
 module Stages
   class Stage6
+    def stage_number
+      6
+    end
+
     def display_code
       <<-CODE
-puts "Hello \#{upper(name)}"
-puts "Hello \#{lower(name)}"
-puts "Hello \#{random_name}"
-puts "Hello \#{random_case(name)}"
+#{Stage5.new.display_code.strip}
 puts "Hello \#{random_both}"
       CODE
     end
 
     def code
       <<-TEST
-      #{Stage5.new.code}
+#{Stage5.new.code}
 puts "Hello \#{random_both}"
 
 result = 1.upto(100).inject([]) do |memo, number|
@@ -22,21 +23,22 @@ end
 if (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.count(name.upcase) > 0) and (result.count(name.downcase) > 0)
   true
 else
-  puts "please ensure your `random_both` returns either upper case or lower case, and each of the two names randomly."
+  puts "please ensure your `random_both` method returns either upper case or lower case of either of the two names randomly."
 end
       TEST
     end
 
     def instructions
       <<-INSTR
-Well done!</br></br>
-Now please implement a method called `random_both` that will return a lower or upper case version of the two names at random.  Do not delete the previous methods.
+<p>Great, you are almost finished!</p>
+<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names at random.  Do not delete the previous methods.</p>
       INSTR
     end
 
     def next_stage
-      ycbm = Element.find('#youcanbookme')
-      ycbm.css('display', 'block')
+      ycbm = Element.find('#instructions')
+      ycbm.html('Please click to <a href="#">book your interview</a>')
+      Element.find('#run_code').hide
       nil
     end
   end

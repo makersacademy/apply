@@ -18,6 +18,9 @@ page '/*.txt', layout: false
 
 # General configuration
 
+Dir["lib/*.rb"].each { |file| require file }
+helpers ImageHelper
+
 # Reload the browser automatically whenever files change
 configure :development do
   activate :livereload
@@ -39,6 +42,9 @@ after_configuration do
     sprockets.append_path p
   end
 end
+
+sprockets.append_path File.join(root, 'bower_components')
+sprockets.import_asset 'makers_styles'
 
 ###
 # Helpers
