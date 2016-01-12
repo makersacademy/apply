@@ -27,7 +27,7 @@ end
     def instructions
       <<-INSTR
 <p>Excellent work!</p>
-<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method.</p>
+<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method but feel free to use a similar structure.</p>
       INSTR
     end
 

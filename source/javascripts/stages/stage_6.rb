@@ -30,8 +30,8 @@ end
 
     def instructions
       <<-INSTR
-<p>Great, you are almost finished!</p>
-<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names at random.  Do not delete the previous methods.</p>
+<p>Great, you're almost finished!</p>
+<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names used previously, at random.  Do not delete the previous methods but think about how you can use what you've done already.</p>
       INSTR
     end
 
