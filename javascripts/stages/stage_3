@@ -36,7 +36,7 @@
       def.$instructions = function() {
         var self = this;
 
-        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method.</p>\n";
+        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method but feel free to use a similar structure.</p>\n";
       };
 
       return (def.$next_stage = function() {

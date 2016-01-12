@@ -26659,7 +26659,7 @@ Opal.modules["stages/stage_3"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method.</p>\n";
+        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method but feel free to use a similar structure.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -26759,7 +26759,7 @@ Opal.modules["stages/stage_5"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "<p>Keep going!</p>\n<p>Now please implement a method called `random_case` that will return a lower or upper case version of a string at random.  Do not delete the previous methods.</p>\n";
+        return "<p>Keep going!</p>\n<p>Now please implement a method called `random_case` that will return a lower or upper case version of a string (passed in as an argument) at random. Try to re-use code that you've written already. Do not delete the previous methods.</p>\n";
       };
 
       return (def.$next_stage = function() {
@@ -26809,7 +26809,7 @@ Opal.modules["stages/stage_6"] = function(Opal) {
       def.$instructions = function() {
         var self = this;
 
-        return "<p>Great, you are almost finished!</p>\n<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names at random.  Do not delete the previous methods.</p>\n";
+        return "<p>Great, you're almost finished!</p>\n<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names used previously, at random.  Do not delete the previous methods but think about how you can use what you've done already.</p>\n";
       };
 
       return (def.$next_stage = function() {
