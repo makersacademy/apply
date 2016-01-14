@@ -15,31 +15,31 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
-      def.$stage_number = function() {
+      def.$stage_number = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "stage_number"); }
         var self = this;
 
         return 4;
       };
 
-      def.$display_code = function() {
+      def.$display_code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "display_code"); }
         var self = this;
 
         return "" + ($scope.get('Stage3').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_name}\"\n";
       };
 
-      def.$code = function() {
+      def.$code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "code"); }
         var self = this;
 
         return "" + ($scope.get('Stage3').$new().$code()) + "\nputs \"Hello \#{random_name}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_name\nend\n\nif result.count('Nikesh') > 0 and result.count(name) > 0\n  true\nelse\n  puts \"please ensure your `random_name` method returns either '\#{name}' or 'Nikesh' randomly.\"\nend\n";
       };
 
-      def.$instructions = function() {
+      def.$instructions = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "instructions"); }
         var self = this;
 
         return "<p>That's great!</p>\n<p>Now please implement a method called `random_name` that will output either the string \"Nikesh\" or your name.  Do not delete the previous methods.</p>\n";
       };
 
-      return (def.$next_stage = function() {
+      return (def.$next_stage = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "next_stage"); }
         var self = this;
 
         return $scope.get('Stage5').$new();

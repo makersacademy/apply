@@ -15,31 +15,31 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
-      def.$stage_number = function() {
+      def.$stage_number = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "stage_number"); }
         var self = this;
 
         return 2;
       };
 
-      def.$display_code = function() {
+      def.$display_code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "display_code"); }
         var self = this;
 
         return "" + ($scope.get('Stage1').$new().$display_code().$strip()) + "\nputs \"Hello \#{upper(name)}\"\n";
       };
 
-      def.$code = function() {
+      def.$code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "code"); }
         var self = this;
 
         return "" + ($scope.get('Stage1').$new().$code()) + "\nputs \"Hello \#{upper(name)}\"\nif upper('asdf') == 'ASDF'\n  true\nelse\n  puts \"please ensure your `upper` method converts a string to all upper case.\"\nend\n";
       };
 
-      def.$instructions = function() {
+      def.$instructions = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "instructions"); }
         var self = this;
 
         return "<p>Well done!</p>\n<p>Now please make the code above work by implementing a method called `upper` that will return a given string converted to all capitals</p>\n";
       };
 
-      return (def.$next_stage = function() {
+      return (def.$next_stage = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "next_stage"); }
         var self = this;
 
         return $scope.get('Stage3').$new();

@@ -15,31 +15,31 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
-      def.$stage_number = function() {
+      def.$stage_number = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "stage_number"); }
         var self = this;
 
         return 1;
       };
 
-      def.$display_code = function() {
+      def.$display_code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "display_code"); }
         var self = this;
 
         return "puts \"Hello \#{name}\"\n";
       };
 
-      def.$code = function() {
+      def.$code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "code"); }
         var self = this;
 
         return "puts \"Hello \#{name}\"\nif name =~ /[a-zA-Z]+/\n  true\nelse\n  puts \"please ensure you assign your name to the variable `name`\"\nend\n";
       };
 
-      def.$instructions = function() {
+      def.$instructions = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "instructions"); }
         var self = this;
 
         return "<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right.</p>\n";
       };
 
-      return (def.$next_stage = function() {
+      return (def.$next_stage = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "next_stage"); }
         var self = this;
 
         return $scope.get('Stage2').$new();
