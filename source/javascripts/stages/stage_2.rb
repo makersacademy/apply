@@ -26,7 +26,7 @@ end
     def instructions
       <<-INSTR
 <p>Well done!</p>
-<p>Now please make the code above work by implementing a method called `upper` that will return a given string converted to all capitals</p>
+<p>Now please make the code above work by implementing a method called `upper`. This method should accept an argument and convert the string value to be in all capitals.</p>
       INSTR
     end
 
