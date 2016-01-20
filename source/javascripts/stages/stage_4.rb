@@ -31,7 +31,7 @@ end
     def instructions
       <<-INSTR
 <p>That's great!</p>
-<p>Now please implement a method called `random_name` that will output either the string "Nikesh" or your name.  Do not delete the previous methods.</p>
+<p>Now please implement a method called `random_name` that will output either the string "Nikesh" or your name at random.  Do not delete the previous methods. Can you complete this in one line?</p>
       INSTR
     end
 

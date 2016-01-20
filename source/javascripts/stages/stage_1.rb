@@ -23,7 +23,7 @@ end
 
     def instructions
       <<-INSTR
-<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right.</p>
+<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right. Remember that the testing framework we use is based on you using Ruby to answer the questions. Take your time to play in `IRB` to play around with the code and test possible theories. Any errors in your code will appear below in the results screen. </p>
       INSTR
     end
 
