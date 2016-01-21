@@ -15,31 +15,31 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
-      def.$stage_number = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "stage_number"); }
+      def.$stage_number = function() {
         var self = this;
 
         return 1;
       };
 
-      def.$display_code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "display_code"); }
+      def.$display_code = function() {
         var self = this;
 
         return "puts \"Hello \#{name}\"\n";
       };
 
-      def.$code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "code"); }
+      def.$code = function() {
         var self = this;
 
         return "puts \"Hello \#{name}\"\nif name =~ /[a-zA-Z]+/\n  true\nelse\n  puts \"please ensure you assign your name to the variable `name`\"\nend\n";
       };
 
-      def.$instructions = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "instructions"); }
+      def.$instructions = function() {
         var self = this;
 
-        return "<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right.</p>\n";
+        return "<p>Please make the code above run correctly, by assigning a string value (use your own name) to a variable `name` in the window on the right. Remember that the testing framework we use is based on you using Ruby to answer the questions. Take your time to play in `IRB` to play around with the code and test possible theories. Any errors in your code will appear below in the results screen. </p>\n";
       };
 
-      return (def.$next_stage = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "next_stage"); }
+      return (def.$next_stage = function() {
         var self = this;
 
         return $scope.get('Stage2').$new();

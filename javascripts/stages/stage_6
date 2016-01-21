@@ -15,31 +15,31 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
-      def.$stage_number = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "stage_number"); }
+      def.$stage_number = function() {
         var self = this;
 
         return 6;
       };
 
-      def.$display_code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "display_code"); }
+      def.$display_code = function() {
         var self = this;
 
         return "" + ($scope.get('Stage5').$new().$display_code().$strip()) + "\nputs \"Hello \#{random_both}\"\n";
       };
 
-      def.$code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "code"); }
+      def.$code = function() {
         var self = this;
 
         return "" + ($scope.get('Stage5').$new().$code()) + "\nputs \"Hello \#{random_both}\"\n\nresult = 1.upto(100).inject([]) do |memo, number|\n  memo << random_both\nend\n\nif (result.count('NIKESH') > 0) and (result.count('nikesh') > 0) and (result.count(name.upcase) > 0) and (result.count(name.downcase) > 0)\n  true\nelse\n  puts \"please ensure your `random_both` method returns either upper case or lower case of either of the two names randomly.\"\nend\n";
       };
 
-      def.$instructions = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "instructions"); }
+      def.$instructions = function() {
         var self = this;
 
-        return "<p>Great, you're almost finished!</p>\n<p>Now please implement a method called `random_both` that will return a lower or upper case version of one of the two names used previously, at random.  Do not delete the previous methods but think about how you can use what you've done already.</p>\n";
+        return "<p>Great, you're almost finished!</p>\n<p>Now please implement a method called `random_both`. This method should return a lower or upper case version of one of the two names used previously, at random.  Do not delete the previous methods but think about how you can use what you've done already. And once more, can you do this without typing any new code?</p>\n";
       };
 
-      return (def.$next_stage = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "next_stage"); }
+      return (def.$next_stage = function() {
         var self = this, ycbm = nil;
 
         ycbm = $scope.get('Element').$find("#instructions");

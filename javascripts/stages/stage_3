@@ -15,31 +15,31 @@
 
       var def = self.$$proto, $scope = self.$$scope;
 
-      def.$stage_number = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "stage_number"); }
+      def.$stage_number = function() {
         var self = this;
 
         return 3;
       };
 
-      def.$display_code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "display_code"); }
+      def.$display_code = function() {
         var self = this;
 
         return "" + ($scope.get('Stage2').$new().$display_code().$strip()) + "\nputs \"Hello \#{lower(name)}\"\n";
       };
 
-      def.$code = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "code"); }
+      def.$code = function() {
         var self = this;
 
         return "" + ($scope.get('Stage2').$new().$code()) + "\nputs \"Hello \#{lower(name)}\"\n\nif lower('ASDF') == 'asdf'\n  true\nelse\n  puts \"please ensure your `lower` method converts a string to all lower case.\"\nend\n";
       };
 
-      def.$instructions = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "instructions"); }
+      def.$instructions = function() {
         var self = this;
 
-        return "<p>Excellent work!</p>\n<p>Now please implement a method called `lower` that will convert a given string to all lower case.  Do not delete the previous `upper` method but feel free to use a similar structure.</p>\n";
+        return "<p>Excellent work!</p>\n<p>Now please implement a new method called `lower` that will convert a passed in string to all lower case.  Do not delete the previous `upper` method but feel free to use a similar structure.</p>\n";
       };
 
-      return (def.$next_stage = function() {var $arity = arguments.length;if ($arity !== 0) { Opal.ac($arity, 0, this, "next_stage"); }
+      return (def.$next_stage = function() {
         var self = this;
 
         return $scope.get('Stage4').$new();
