@@ -41,6 +41,7 @@ after_configuration do
   Opal.paths.each do |p|
     sprockets.append_path p
   end
+  Opal::Processor.arity_check_enabled = true
 end
 
 sprockets.append_path File.join(root, 'bower_components')
